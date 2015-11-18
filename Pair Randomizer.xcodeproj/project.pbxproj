@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D74D45E21BFD23760098FD3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45E11BFD23760098FD3D /* AppDelegate.swift */; };
-		D74D45E41BFD23760098FD3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45E31BFD23760098FD3D /* ViewController.swift */; };
 		D74D45E71BFD23760098FD3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D45E51BFD23760098FD3D /* Main.storyboard */; };
 		D74D45E91BFD23760098FD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74D45E81BFD23760098FD3D /* Assets.xcassets */; };
 		D74D45EC1BFD23760098FD3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D45EA1BFD23760098FD3D /* LaunchScreen.storyboard */; };
 		D74D45F41BFD238B0098FD3D /* RandomizerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45F31BFD238B0098FD3D /* RandomizerController.swift */; };
+		D74D45F61BFD289D0098FD3D /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D74D45DE1BFD23760098FD3D /* Pair Randomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pair Randomizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D45E11BFD23760098FD3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D74D45E31BFD23760098FD3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D74D45E61BFD23760098FD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D74D45E81BFD23760098FD3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D74D45EB1BFD23760098FD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D74D45ED1BFD23760098FD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74D45F31BFD238B0098FD3D /* RandomizerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomizerController.swift; path = ../RandomizerController.swift; sourceTree = "<group>"; };
+		D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,8 @@
 			children = (
 				D74D45E11BFD23760098FD3D /* AppDelegate.swift */,
 				D74D45F31BFD238B0098FD3D /* RandomizerController.swift */,
-				D74D45E31BFD23760098FD3D /* ViewController.swift */,
 				D74D45E51BFD23760098FD3D /* Main.storyboard */,
+				D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */,
 				D74D45E81BFD23760098FD3D /* Assets.xcassets */,
 				D74D45EA1BFD23760098FD3D /* LaunchScreen.storyboard */,
 				D74D45ED1BFD23760098FD3D /* Info.plist */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D74D45E41BFD23760098FD3D /* ViewController.swift in Sources */,
+				D74D45F61BFD289D0098FD3D /* HomeScreenViewController.swift in Sources */,
 				D74D45F41BFD238B0098FD3D /* RandomizerController.swift in Sources */,
 				D74D45E21BFD23760098FD3D /* AppDelegate.swift in Sources */,
 			);

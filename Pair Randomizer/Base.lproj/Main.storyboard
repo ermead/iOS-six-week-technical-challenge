@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1964" y="1017"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Screen View Controller-->
         <scene sceneID="VPV-eK-JQV">
             <objects>
-                <viewController id="vYA-XI-6dS" sceneMemberID="viewController">
+                <viewController id="vYA-XI-6dS" customClass="HomeScreenViewController" customModule="Pair_Randomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ykD-8k-wG3"/>
                         <viewControllerLayoutGuide type="bottom" id="b4S-Z5-5bp"/>
@@ -57,7 +57,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="C4j-bo-W7O">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="C4j-bo-W7O">
                                 <rect key="frame" x="20" y="164" width="240" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="WZm-4Z-GcH"/>
@@ -70,37 +70,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-47-JT3">
-                                <rect key="frame" x="63" y="72" width="475" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="UfM-SC-Mm3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hit the button to get a random Pair!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-Yc-nDa">
-                                <rect key="frame" x="150" y="347" width="301" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAU-4X-yev">
-                                <rect key="frame" x="217" y="403" width="166" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Get Random Pair!">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yto-ze-M1j">
-                                <rect key="frame" x="286" y="164" width="24" height="175"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="dKU-65-vyB"/>
-                                    <constraint firstAttribute="height" constant="175" id="nvt-VL-SfP"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="default2" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-cq-O8p">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default2" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-cq-O8p">
                                 <rect key="frame" x="329" y="164" width="240" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="EDs-zF-jaT"/>
@@ -113,9 +83,47 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-47-JT3">
+                                <rect key="frame" x="63" y="72" width="475" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="UfM-SC-Mm3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hit the button to get a random Pair!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-Yc-nDa">
+                                <rect key="frame" x="150" y="347" width="301" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAU-4X-yev">
+                                <rect key="frame" x="217" y="403" width="166" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="elp-i0-p9d"/>
+                                    <constraint firstAttribute="width" constant="166" id="sU9-WS-NAS"/>
+                                </constraints>
+                                <state key="normal" title="Get Random Pair!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="vYA-XI-6dS" eventType="touchUpInside" id="dyj-pL-STR"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yto-ze-M1j">
+                                <rect key="frame" x="288" y="164" width="24" height="175"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="dKU-65-vyB"/>
+                                    <constraint firstAttribute="height" constant="175" id="nvt-VL-SfP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ceS-cq-O8p" firstAttribute="height" secondItem="yto-ze-M1j" secondAttribute="height" id="0kd-IN-1R2"/>
                             <constraint firstItem="ceS-cq-O8p" firstAttribute="top" secondItem="MWh-47-JT3" secondAttribute="bottom" constant="21" id="0wd-4e-W98"/>
                             <constraint firstItem="yto-ze-M1j" firstAttribute="centerY" secondItem="ugF-0Z-YJE" secondAttribute="centerY" id="40f-kW-g1E"/>
                             <constraint firstItem="MWh-47-JT3" firstAttribute="top" secondItem="ykD-8k-wG3" secondAttribute="bottom" constant="8" id="5rS-S3-xZQ"/>
@@ -125,17 +133,32 @@
                             <constraint firstItem="C4j-bo-W7O" firstAttribute="top" secondItem="MWh-47-JT3" secondAttribute="bottom" constant="21" id="GV9-5k-Gzv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ceS-cq-O8p" secondAttribute="trailing" id="MWg-ON-xrm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MWh-47-JT3" secondAttribute="trailing" constant="42" id="RyR-3I-fiG"/>
+                            <constraint firstItem="yto-ze-M1j" firstAttribute="top" secondItem="MWh-47-JT3" secondAttribute="bottom" constant="21" id="bTd-eG-7Yv"/>
                             <constraint firstItem="ceS-cq-O8p" firstAttribute="leading" secondItem="yto-ze-M1j" secondAttribute="trailing" constant="19" id="fsi-cG-Bw8"/>
                             <constraint firstItem="fwc-Yc-nDa" firstAttribute="top" secondItem="ceS-cq-O8p" secondAttribute="bottom" constant="45" id="gQ4-8S-HXw"/>
                             <constraint firstItem="yto-ze-M1j" firstAttribute="leading" secondItem="C4j-bo-W7O" secondAttribute="trailing" constant="26" id="idg-aJ-Kni"/>
                             <constraint firstItem="C4j-bo-W7O" firstAttribute="width" secondItem="ceS-cq-O8p" secondAttribute="width" id="jdy-qZ-5sl"/>
-                            <constraint firstItem="oAU-4X-yev" firstAttribute="centerY" secondItem="ugF-0Z-YJE" secondAttribute="centerY" id="mJ1-ce-2nW"/>
+                            <constraint firstItem="C4j-bo-W7O" firstAttribute="height" secondItem="yto-ze-M1j" secondAttribute="height" id="mL4-dJ-h2m"/>
+                            <constraint firstItem="b4S-Z5-5bp" firstAttribute="top" secondItem="oAU-4X-yev" secondAttribute="bottom" constant="118" id="naq-Vz-94a"/>
                             <constraint firstItem="C4j-bo-W7O" firstAttribute="height" secondItem="ceS-cq-O8p" secondAttribute="height" id="opi-H4-Dv0"/>
                             <constraint firstItem="fwc-Yc-nDa" firstAttribute="centerX" secondItem="ugF-0Z-YJE" secondAttribute="centerX" id="spe-kz-pEe"/>
                             <constraint firstItem="oAU-4X-yev" firstAttribute="top" secondItem="fwc-Yc-nDa" secondAttribute="bottom" constant="35" id="vBD-x8-zbQ"/>
+                            <constraint firstItem="oAU-4X-yev" firstAttribute="centerX" secondItem="ugF-0Z-YJE" secondAttribute="centerX" id="zEb-Rd-Azp"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="40f-kW-g1E"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="LlF-e3-tdw"/>
+                    <connections>
+                        <outlet property="buttonOutlet" destination="oAU-4X-yev" id="FWO-zR-g4j"/>
+                        <outlet property="instructionsOutlet" destination="fwc-Yc-nDa" id="t0I-Z6-pfb"/>
+                        <outlet property="leftPictureImageView" destination="C4j-bo-W7O" id="sGa-BM-IRi"/>
+                        <outlet property="mainTitleOutlet" destination="MWh-47-JT3" id="HKR-eS-gOO"/>
+                        <outlet property="rightPictureImageView" destination="ceS-cq-O8p" id="hBB-y5-A8R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myd-fu-VoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
