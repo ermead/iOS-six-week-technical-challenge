@@ -19,8 +19,12 @@ class OtherListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("otherCell", forIndexPath: indexPath)
-        cell.textLabel?.text = OtherController.sharedController.defaultOthers[indexPath.row].name   
+        
+        cell.textLabel?.text = OtherController.sharedController.defaultOthers[indexPath.row].name
         cell.imageView?.image = UIImage(named: "default")
+        
+
+        
         return cell
         
     }

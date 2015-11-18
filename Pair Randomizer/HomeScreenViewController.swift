@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeScreenViewController: UIViewController {
 
@@ -21,11 +22,13 @@ class HomeScreenViewController: UIViewController {
         
         RandomizerController().randomPair(8, array2Count: 16)
         RandomizerController().randomForIndividual(25)
-        addMockPeople(PeopleController.sharedController.defaultPersons)
-        addMockOthers(OtherController.sharedController.defaultOthers)
+        
+        //deleteCoreData()
+        //addMockPeople(PeopleController.sharedController.defaultPersons)
+        //addMockOthers(OtherController.sharedController.defaultOthers)
         
 
-        // Do any additional setup after loading the view.
+      
     }
     
  
@@ -60,10 +63,21 @@ class HomeScreenViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
+    func deleteCoreData() {
+        
+        let classObjectsToBeDeleted = ["People", "Other"]
+        
+        for thing in classObjectsToBeDeleted {
+            let fetchRequest = NSFetchRequest(entityName: thing)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            
+            do { try Stack.sharedStack.managedObjectContext.executeRequest(deleteRequest)
+            } catch _ as NSError {
+                print("error deleting batch")
+                return
+            }
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PeopleListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -19,8 +20,11 @@ class PeopleListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath)
+        
         cell.textLabel?.text = PeopleController.sharedController.defaultPersons[indexPath.row].name
-        cell.imageView?.image = UIImage(named: "default")
+        cell.imageView?.image = UIImage(named: "default2")
+        
+        
         return cell
         
     }
