@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        RandomizerController().randomPair(8, array2Count: 16)
+        RandomizerController().randomForIndividual(25)
     }
 
     override func didReceiveMemoryWarning() {

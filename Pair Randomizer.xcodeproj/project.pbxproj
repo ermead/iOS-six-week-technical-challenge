@@ -23,7 +23,7 @@
 		D74D45E81BFD23760098FD3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D74D45EB1BFD23760098FD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D74D45ED1BFD23760098FD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D74D45F31BFD238B0098FD3D /* RandomizerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizerController.swift; sourceTree = "<group>"; };
+		D74D45F31BFD238B0098FD3D /* RandomizerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomizerController.swift; path = ../RandomizerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,6 @@
 		D74D45D51BFD23760098FD3D = {
 			isa = PBXGroup;
 			children = (
-				D74D45F31BFD238B0098FD3D /* RandomizerController.swift */,
 				D74D45E01BFD23760098FD3D /* Pair Randomizer */,
 				D74D45DF1BFD23760098FD3D /* Products */,
 			);
@@ -58,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				D74D45E11BFD23760098FD3D /* AppDelegate.swift */,
+				D74D45F31BFD238B0098FD3D /* RandomizerController.swift */,
 				D74D45E31BFD23760098FD3D /* ViewController.swift */,
 				D74D45E51BFD23760098FD3D /* Main.storyboard */,
 				D74D45E81BFD23760098FD3D /* Assets.xcassets */,

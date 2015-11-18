@@ -11,13 +11,8 @@ import UIKit
 
 class RandomizerController {
     
-    init(){
-        
-        
-    }
-    
-    var arrayCount1: Int = 0
-    var arrayCount2: Int = 0
+//    var arrayCount1: Int = 0
+//    var arrayCount2: Int = 0
     
     func randomPair(array1Count: Int, array2Count: Int)->(indexInArray1: Int, indexInArray2: Int) {
         
