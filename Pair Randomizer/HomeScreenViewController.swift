@@ -17,17 +17,18 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var instructionsOutlet: UILabel!
     @IBOutlet weak var buttonOutlet: UIButton!
     
+    var peopleArrayCount: Int = PeopleController.sharedController.persons.count
+    var otherArrayCount: Int = OtherController.sharedController.others.count
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        RandomizerController().randomPair(8, array2Count: 16)
-        RandomizerController().randomForIndividual(25)
         
         //deleteCoreData()
+        
         //addMockPeople(PeopleController.sharedController.defaultPersons)
         //addMockOthers(OtherController.sharedController.defaultOthers)
-        
-
       
     }
     
@@ -36,8 +37,20 @@ class HomeScreenViewController: UIViewController {
     
         print("random button tapped")
         
-        RandomizerController().randomPair(8, array2Count: 16)
-        RandomizerController().randomForIndividual(25)
+        let randomPair = RandomizerController().randomPair(peopleArrayCount, array2Count: otherArrayCount)
+        
+        print("The random pair match is")
+        print(randomPair.indexInArray1)
+        print(randomPair.indexInArray2)
+        
+        print("in other words, \(PeopleController.sharedController.persons[randomPair.indexInArray1].name)")
+        print("and")
+        print("\(OtherController.sharedController.others[randomPair.indexInArray2].name)")
+        print("match up")
+        
+        
+        
+        //RandomizerController().randomForIndividual(25)
     
     }
     

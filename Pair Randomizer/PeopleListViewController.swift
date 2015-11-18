@@ -21,7 +21,7 @@ class PeopleListViewController: UIViewController, UITableViewDataSource, UITable
         
         let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = PeopleController.sharedController.defaultPersons[indexPath.row].name
+        cell.textLabel?.text = PeopleController.sharedController.persons[indexPath.row].name
         cell.imageView?.image = UIImage(named: "default2")
         
         
