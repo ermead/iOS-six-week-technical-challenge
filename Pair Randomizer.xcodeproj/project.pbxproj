@@ -13,6 +13,14 @@
 		D74D45EC1BFD23760098FD3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D45EA1BFD23760098FD3D /* LaunchScreen.storyboard */; };
 		D74D45F41BFD238B0098FD3D /* RandomizerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45F31BFD238B0098FD3D /* RandomizerController.swift */; };
 		D74D45F61BFD289D0098FD3D /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */; };
+		D74D45FB1BFD2C070098FD3D /* RandomPairs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D74D45F91BFD2C070098FD3D /* RandomPairs.xcdatamodeld */; };
+		D74D46001BFD2CA50098FD3D /* Other+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45FC1BFD2CA50098FD3D /* Other+CoreDataProperties.swift */; };
+		D74D46011BFD2CA50098FD3D /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45FD1BFD2CA50098FD3D /* Other.swift */; };
+		D74D46021BFD2CA50098FD3D /* People+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45FE1BFD2CA50098FD3D /* People+CoreDataProperties.swift */; };
+		D74D46031BFD2CA50098FD3D /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D45FF1BFD2CA50098FD3D /* People.swift */; };
+		D74D46051BFD2D3E0098FD3D /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D46041BFD2D3E0098FD3D /* Stack.swift */; };
+		D74D46081BFD2E710098FD3D /* PeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D46071BFD2E710098FD3D /* PeopleController.swift */; };
+		D74D460A1BFD30100098FD3D /* OtherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D46091BFD30100098FD3D /* OtherController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		D74D45ED1BFD23760098FD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74D45F31BFD238B0098FD3D /* RandomizerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomizerController.swift; path = ../RandomizerController.swift; sourceTree = "<group>"; };
 		D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		D74D45FA1BFD2C070098FD3D /* RandomPairs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RandomPairs.xcdatamodel; sourceTree = "<group>"; };
+		D74D45FC1BFD2CA50098FD3D /* Other+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Other+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D74D45FD1BFD2CA50098FD3D /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
+		D74D45FE1BFD2CA50098FD3D /* People+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "People+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D74D45FF1BFD2CA50098FD3D /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		D74D46041BFD2D3E0098FD3D /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = ../Stack.swift; sourceTree = "<group>"; };
+		D74D46071BFD2E710098FD3D /* PeopleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleController.swift; sourceTree = "<group>"; };
+		D74D46091BFD30100098FD3D /* OtherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +76,27 @@
 				D74D45F31BFD238B0098FD3D /* RandomizerController.swift */,
 				D74D45E51BFD23760098FD3D /* Main.storyboard */,
 				D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */,
+				D74D46071BFD2E710098FD3D /* PeopleController.swift */,
+				D74D46091BFD30100098FD3D /* OtherController.swift */,
 				D74D45E81BFD23760098FD3D /* Assets.xcassets */,
+				D74D46061BFD2D660098FD3D /* CoreData */,
 				D74D45EA1BFD23760098FD3D /* LaunchScreen.storyboard */,
 				D74D45ED1BFD23760098FD3D /* Info.plist */,
 			);
 			path = "Pair Randomizer";
+			sourceTree = "<group>";
+		};
+		D74D46061BFD2D660098FD3D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D74D45FC1BFD2CA50098FD3D /* Other+CoreDataProperties.swift */,
+				D74D45FD1BFD2CA50098FD3D /* Other.swift */,
+				D74D45FE1BFD2CA50098FD3D /* People+CoreDataProperties.swift */,
+				D74D45FF1BFD2CA50098FD3D /* People.swift */,
+				D74D45F91BFD2C070098FD3D /* RandomPairs.xcdatamodeld */,
+				D74D46041BFD2D3E0098FD3D /* Stack.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74D46011BFD2CA50098FD3D /* Other.swift in Sources */,
+				D74D46051BFD2D3E0098FD3D /* Stack.swift in Sources */,
+				D74D46021BFD2CA50098FD3D /* People+CoreDataProperties.swift in Sources */,
+				D74D46001BFD2CA50098FD3D /* Other+CoreDataProperties.swift in Sources */,
+				D74D460A1BFD30100098FD3D /* OtherController.swift in Sources */,
+				D74D45FB1BFD2C070098FD3D /* RandomPairs.xcdatamodeld in Sources */,
+				D74D46031BFD2CA50098FD3D /* People.swift in Sources */,
+				D74D46081BFD2E710098FD3D /* PeopleController.swift in Sources */,
 				D74D45F61BFD289D0098FD3D /* HomeScreenViewController.swift in Sources */,
 				D74D45F41BFD238B0098FD3D /* RandomizerController.swift in Sources */,
 				D74D45E21BFD23760098FD3D /* AppDelegate.swift in Sources */,
@@ -292,6 +332,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D74D45F91BFD2C070098FD3D /* RandomPairs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D74D45FA1BFD2C070098FD3D /* RandomPairs.xcdatamodel */,
+			);
+			currentVersion = D74D45FA1BFD2C070098FD3D /* RandomPairs.xcdatamodel */;
+			path = RandomPairs.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D74D45D61BFD23760098FD3D /* Project object */;
 }
