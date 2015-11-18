@@ -19,16 +19,17 @@ class PeopleListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = PeopleController.sharedController.defaultPersons[indexPath.row].name
         cell.imageView?.image = UIImage(named: "default")
         return cell
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return PeopleController.sharedController.persons.count
         
-        return 5
+        
+        return PeopleController.sharedController.persons.count
+        
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

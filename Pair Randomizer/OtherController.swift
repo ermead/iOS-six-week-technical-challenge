@@ -15,7 +15,7 @@ class OtherController: NSObject {
     
     static let sharedController = OtherController()
     
-    var defaultPersons: [Other] {
+    var defaultOthers: [Other] {
         
         let other1 = Other(name: "Truck", imageId: "12345", context: Stack.sharedStack.managedObjectContext)
         let other2 = Other(name: "Ferrari", imageId: "12345", context: Stack.sharedStack.managedObjectContext)

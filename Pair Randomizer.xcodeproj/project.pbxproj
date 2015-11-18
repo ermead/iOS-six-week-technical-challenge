@@ -77,24 +77,19 @@
 			isa = PBXGroup;
 			children = (
 				D74D45E11BFD23760098FD3D /* AppDelegate.swift */,
-				D74D45F31BFD238B0098FD3D /* RandomizerController.swift */,
-				D74D45E51BFD23760098FD3D /* Main.storyboard */,
-				D74D460B1BFD32A50098FD3D /* PeopleListViewController.swift */,
-				D74D460D1BFD32B10098FD3D /* OtherListViewController.swift */,
-				D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */,
-				D74D46071BFD2E710098FD3D /* PeopleController.swift */,
-				D74D46091BFD30100098FD3D /* OtherController.swift */,
-				D74D45E81BFD23760098FD3D /* Assets.xcassets */,
-				D74D46061BFD2D660098FD3D /* CoreData */,
+				D74D460F1BFD34B10098FD3D /* Views */,
+				D74D46101BFD34CE0098FD3D /* Controllers */,
+				D74D46061BFD2D660098FD3D /* CoreDataModels */,
 				D74D45EA1BFD23760098FD3D /* LaunchScreen.storyboard */,
 				D74D45ED1BFD23760098FD3D /* Info.plist */,
 			);
 			path = "Pair Randomizer";
 			sourceTree = "<group>";
 		};
-		D74D46061BFD2D660098FD3D /* CoreData */ = {
+		D74D46061BFD2D660098FD3D /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				D74D45E81BFD23760098FD3D /* Assets.xcassets */,
 				D74D45FC1BFD2CA50098FD3D /* Other+CoreDataProperties.swift */,
 				D74D45FD1BFD2CA50098FD3D /* Other.swift */,
 				D74D45FE1BFD2CA50098FD3D /* People+CoreDataProperties.swift */,
@@ -102,7 +97,28 @@
 				D74D45F91BFD2C070098FD3D /* RandomPairs.xcdatamodeld */,
 				D74D46041BFD2D3E0098FD3D /* Stack.swift */,
 			);
-			name = CoreData;
+			name = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		D74D460F1BFD34B10098FD3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D74D45E51BFD23760098FD3D /* Main.storyboard */,
+				D74D45F51BFD289D0098FD3D /* HomeScreenViewController.swift */,
+				D74D460B1BFD32A50098FD3D /* PeopleListViewController.swift */,
+				D74D460D1BFD32B10098FD3D /* OtherListViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D74D46101BFD34CE0098FD3D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D74D46071BFD2E710098FD3D /* PeopleController.swift */,
+				D74D46091BFD30100098FD3D /* OtherController.swift */,
+				D74D45F31BFD238B0098FD3D /* RandomizerController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

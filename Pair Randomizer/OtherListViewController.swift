@@ -19,16 +19,16 @@ class OtherListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("otherCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = OtherController.sharedController.defaultOthers[indexPath.row].name   
         cell.imageView?.image = UIImage(named: "default")
         return cell
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return OtherController.sharedController.others.count
         
-        return 5
+        return OtherController.sharedController.others.count
+        
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

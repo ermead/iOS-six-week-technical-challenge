@@ -21,6 +21,9 @@ class HomeScreenViewController: UIViewController {
         
         RandomizerController().randomPair(8, array2Count: 16)
         RandomizerController().randomForIndividual(25)
+        addMockPeople(PeopleController.sharedController.defaultPersons)
+        addMockOthers(OtherController.sharedController.defaultOthers)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -34,6 +37,29 @@ class HomeScreenViewController: UIViewController {
         RandomizerController().randomForIndividual(25)
     
     }
+    
+    func addMockPeople(array: [People]){
+        
+        let array = array
+        
+        for people in array{
+            
+            PeopleController.sharedController.addPerson(people)
+            
+        }
+    }
+    
+    func addMockOthers(array: [Other]){
+        
+        let array = array
+        
+        for other in array{
+            
+            OtherController.sharedController.addOther(other)
+            
+        }
+    }
+    
     
     
     
