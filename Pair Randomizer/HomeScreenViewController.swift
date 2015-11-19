@@ -8,10 +8,13 @@
 
 import UIKit
 import CoreData
+import CoreGraphics
+import AVFoundation
 
 class HomeScreenViewController: UIViewController {
 
-    
+    @IBOutlet weak var synthesizeButton: UIButton!
+    @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var mainTitleOutlet: UILabel!
     @IBOutlet weak var leftPictureImageView: UIImageView!
     @IBOutlet weak var rightPictureImageView: UIImageView!
@@ -21,7 +24,9 @@ class HomeScreenViewController: UIViewController {
     
     var peopleArrayCount: Int?
     var otherArrayCount: Int?
-    
+    var faceBounds: CGRect?
+    var randomGreetings: [String] = ["Yes", "Cool", "Right On", "Wow", "Nice", "Super", "That makes sense"]
+    var randomMatchExpressions: [String] = ["paired up", "matched up", "is compatible", "fits best", "fits together", "got paired"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,23 +35,26 @@ class HomeScreenViewController: UIViewController {
         
         //deleteCoreData()
         
-//        OtherController.sharedController.setUpDefaultImages()
-//        PeopleController.sharedController.setUpDefaultImages()
-//        
-//        addMockPeople(PeopleController.sharedController.defaultPersons)
-//        addMockOthers(OtherController.sharedController.defaultOthers)
       
     }
     
     func setUp(){
         peopleArrayCount = PeopleController.sharedController.persons.count
         otherArrayCount = OtherController.sharedController.others.count
+        buttonOutlet.layer.cornerRadius = 10
+        buttonOutlet.layer.borderColor = UIColor.blackColor().CGColor
+        buttonOutlet.layer.borderWidth = 2
+        synthesizeButton.layer.cornerRadius = 10
+        synthesizeButton.layer.borderColor = UIColor.blueColor().CGColor
+        synthesizeButton.layer.borderWidth = 2
     }
  
     @IBAction func buttonTapped(sender: UIButton) {
     
         print("random button tapped")
         
+        let thisGreeting = RandomizerController().randomExclamation(self.randomGreetings)
+        let thisMatchedExpression = RandomizerController().randomExclamation(self.randomMatchExpressions)
         var randomPair = RandomizerController().randomPair(peopleArrayCount!, array2Count: otherArrayCount!)
         
         print("The random pair match is")
@@ -58,9 +66,11 @@ class HomeScreenViewController: UIViewController {
         print("\(OtherController.sharedController.others[randomPair.indexInArray2].name)")
         print("match up")
         
-        instructionsOutlet.text = "Nice! Looks like \(PeopleController.sharedController.persons[randomPair.indexInArray1].name!)"
+        let randomArray: [String] = []
         
-        matchingOutlet.text = "matched up with \(OtherController.sharedController.others[randomPair.indexInArray2].name!)"
+        instructionsOutlet.text = "\(thisGreeting)! Looks like \(PeopleController.sharedController.persons[randomPair.indexInArray1].name!)"
+        
+        matchingOutlet.text = "\(thisMatchedExpression) with a \(OtherController.sharedController.others[randomPair.indexInArray2].name!)"
         
         if PeopleController.sharedController.persons[randomPair.indexInArray1].imageId != nil {
             ImageController.imageForImageId(PeopleController.sharedController.persons[randomPair.indexInArray1].imageId!, completion: { (image) -> Void in
@@ -72,31 +82,38 @@ class HomeScreenViewController: UIViewController {
                 self.rightPictureImageView.image = image
             })}
         
+        self.detectFaces()
+        
+        var  utterance1 = AVSpeechUtterance(string: self.instructionsOutlet.text!)
+        var  utterance2 = AVSpeechUtterance(string: self.matchingOutlet.text!)
+        utterance1.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        utterance1.rate = 0.51
+        utterance2.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        utterance2.rate = 0.51
+        
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speakUtterance(utterance1)
+        synthesizer.speakUtterance(utterance2)
+        
+        
+        
         //RandomizerController().randomForIndividual(25)
     
     }
     
-    func addMockPeople(array: [People]){
+    @IBAction func synthesizeButtonTapped(sender: UIButton) {
         
-        let array = array
-        
-        for people in array{
+        if sender.titleLabel?.text == "close"{
+         
+            resultImage.image = nil
+            synthesizeButton.setTitle("Synthesize!", forState: .Normal)
             
-            PeopleController.sharedController.addPerson(people)
-            
+        } else {
+            applyFilter()
+            synthesizeButton.setTitle("close", forState: .Normal)
         }
     }
     
-    func addMockOthers(array: [Other]){
-        
-        let array = array
-        
-        for other in array{
-            
-            OtherController.sharedController.addOther(other)
-            
-        }
-    }
     
     func deleteCoreData() {
         
@@ -114,9 +131,68 @@ class HomeScreenViewController: UIViewController {
         }
     }
     
+    func detectFaces(){
+        
+        if let inputImage = leftPictureImageView.image {
+            let ciImage = CIImage(CGImage: inputImage.CGImage!)
+            
+            let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+            let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: options)
+            
+            let faces = faceDetector.featuresInImage(ciImage)
+            
+            if let face = faces.first as? CIFaceFeature {
+                print("Found face at \(face.bounds)")
+                self.faceBounds = face.bounds
+                
+                if face.hasLeftEyePosition {
+                    print("Found left eye at \(face.leftEyePosition)")
+                }
+                
+                if face.hasRightEyePosition {
+                    print("Found right eye at \(face.rightEyePosition)")
+                }
+                
+                if face.hasMouthPosition {
+                    print("Found mouth at \(face.mouthPosition)")
+                }
+            }
+        }
+    }
+    
+    func applyFilter(){
+        
+        if let personImage = leftPictureImageView.image, otherImage = rightPictureImageView.image {
+            let rect = CGRect(x: 0, y: 0, width: personImage.size.width, height: personImage.size.height)
+           
+            
+            UIGraphicsBeginImageContextWithOptions(personImage.size, true, 0)
+            let context = UIGraphicsGetCurrentContext()
+            
+            // fill the background with white so that translucent colors get lighter
+            CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
+            CGContextFillRect(context, rect)
+            
+            personImage.drawInRect(rect, blendMode: .Normal, alpha: 1)
+            //img6.drawInRect(rect, blendMode: .Luminosity, alpha: 1)
+            //img6.drawInRect(rect, blendMode: .Mutiply, alpha: 1)
+            //img6.drawInRect(rect, blendMode: .Screen, alpha: 1)
+            otherImage.drawInRect(rect, blendMode: CGBlendMode.Overlay, alpha: 0.7)
+            
+            // grab the finished image and return it
+            let result = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            
+            
+            self.resultImage.image = result
+        }
+        
 
         
-    
+        
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

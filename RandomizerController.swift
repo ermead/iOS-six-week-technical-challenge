@@ -30,6 +30,17 @@ class RandomizerController {
         return pair
     }
     
+    func randomExclamation(array: [String])-> String{
+        
+        let count = array.count
+        
+        let randomIndexInArray: Int = Int(arc4random_uniform(UInt32(count)))
+        
+        print ("\(array[randomIndexInArray])")
+        
+        return ("\(array[randomIndexInArray])")
+    }
+    
     func randomForIndividual(arrayCount: Int) -> (Int){
         
         
