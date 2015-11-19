@@ -11,10 +11,12 @@ import CoreData
 
 class HomeScreenViewController: UIViewController {
 
+    
     @IBOutlet weak var mainTitleOutlet: UILabel!
     @IBOutlet weak var leftPictureImageView: UIImageView!
     @IBOutlet weak var rightPictureImageView: UIImageView!
     @IBOutlet weak var instructionsOutlet: UILabel!
+    @IBOutlet weak var matchingOutlet: UILabel!
     @IBOutlet weak var buttonOutlet: UIButton!
     
     var peopleArrayCount: Int = PeopleController.sharedController.persons.count
@@ -47,6 +49,20 @@ class HomeScreenViewController: UIViewController {
         print("and")
         print("\(OtherController.sharedController.others[randomPair.indexInArray2].name)")
         print("match up")
+        
+        instructionsOutlet.text = "Nice! Looks like \(PeopleController.sharedController.persons[randomPair.indexInArray1].name!)"
+        
+        matchingOutlet.text = "matched up with \(OtherController.sharedController.others[randomPair.indexInArray2].name!)"
+        
+        if PeopleController.sharedController.persons[randomPair.indexInArray1].imageId != nil {
+            ImageController.imageForImageId(PeopleController.sharedController.persons[randomPair.indexInArray1].imageId!, completion: { (image) -> Void in
+                self.leftPictureImageView.image = image
+            })}
+        
+        if OtherController.sharedController.others[randomPair.indexInArray2].imageId != nil {
+            ImageController.imageForImageId(OtherController.sharedController.others[randomPair.indexInArray2].imageId!, completion: { (image) -> Void in
+                self.rightPictureImageView.image = image
+            })}
         
         //RandomizerController().randomForIndividual(25)
     
