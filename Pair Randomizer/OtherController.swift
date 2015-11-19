@@ -16,24 +16,62 @@ class OtherController: NSObject {
     
     static let sharedController = OtherController()
     
-    var imageId1: String = "12345"
-    var imageId2: String = "12345"
-    var imageId3: String = "12345"
-    var imageId4: String = "12345"
-    var imageId5: String = "12345"
+    var imagePlaceholder1 = UIImage(named: "blackCar")
+    var imagePlaceholder2 = UIImage(named: "greenCar")
+    var imagePlaceholder3 = UIImage(named: "caddy")
+    var imagePlaceholder4 = UIImage(named: "convertible")
+    var imagePlaceholder5 = UIImage(named: "truck")
     
-    ImageController.getImageIdFromPhoto(UIImage(named: "blackCar")!) { (imageId) -> Void in
-        self.imageId1 = imageId
+    var imageId1: String? = "12345"
+    var imageId2: String? = "12345"
+    var imageId3: String? = "12345"
+    var imageId4: String? = "12345"
+    var imageId5: String? = "12345"
+    
+    func setUpDefaultImages(){
+    
+        ImageController.getImageIdFromPhoto(self.imagePlaceholder1!) { (imageId) -> Void in
+            
+            if let imageId = imageId {
+                self.imageId1 = imageId
+            }
+        }
+        ImageController.getImageIdFromPhoto(self.imagePlaceholder2!) { (imageId) -> Void in
+            
+            if let imageId = imageId {
+                self.imageId2 = imageId
+            }
+        }
+        ImageController.getImageIdFromPhoto(self.imagePlaceholder3!) { (imageId) -> Void in
+            
+            if let imageId = imageId {
+                self.imageId3 = imageId
+            }
+        }
+        ImageController.getImageIdFromPhoto(self.imagePlaceholder4!) { (imageId) -> Void in
+            
+            if let imageId = imageId {
+                self.imageId4 = imageId
+            }
+        }
+        ImageController.getImageIdFromPhoto(self.imagePlaceholder5!) { (imageId) -> Void in
+            
+            if let imageId = imageId {
+                self.imageId5 = imageId
+            }
+        }
     }
     
     
     var defaultOthers: [Other] {
         
-        let other1 = Other(name: "Truck", imageId: imageId1  context: Stack.sharedStack.managedObjectContext)
-        let other2 = Other(name: "Ferrari", imageId: "12345", context: Stack.sharedStack.managedObjectContext)
-        let other3 = Other(name: "Minivan", imageId: "12345", context: Stack.sharedStack.managedObjectContext)
+        let other1 = Other(name: "Sports Car", imageId: imageId1!,  context: Stack.sharedStack.managedObjectContext)
+        let other2 = Other(name: "Mustang", imageId: imageId2!, context: Stack.sharedStack.managedObjectContext)
+        let other3 = Other(name: "Caddy", imageId: imageId3!, context: Stack.sharedStack.managedObjectContext)
+        let other4 = Other(name: "Convertible", imageId: imageId4!, context: Stack.sharedStack.managedObjectContext)
+        let other5 = Other(name: "Truck", imageId: imageId5!, context: Stack.sharedStack.managedObjectContext)
         
-        return [other1, other2, other3]
+        return [other1, other2, other3, other4, other5]
         
     }
     
