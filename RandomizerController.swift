@@ -18,9 +18,9 @@ class RandomizerController {
         
         var pair : (Int, Int) = (0,0)
         
-        var randomArray1 : Int = Int(arc4random_uniform(UInt32(array1Count - 1)))
+        var randomArray1 : Int = Int(arc4random_uniform(UInt32(array1Count)))
         
-        var randomArray2 : Int = Int(arc4random_uniform(UInt32(array2Count - 1)))
+        var randomArray2 : Int = Int(arc4random_uniform(UInt32(array2Count)))
         
         
         pair = (randomArray1, randomArray2)

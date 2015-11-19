@@ -19,30 +19,35 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var matchingOutlet: UILabel!
     @IBOutlet weak var buttonOutlet: UIButton!
     
-    var peopleArrayCount: Int = PeopleController.sharedController.persons.count
-    var otherArrayCount: Int = OtherController.sharedController.others.count
+    var peopleArrayCount: Int?
+    var otherArrayCount: Int?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUp()
         
-        deleteCoreData()
+        //deleteCoreData()
         
-        OtherController.sharedController.setUpDefaultImages()
-        PeopleController.sharedController.setUpDefaultImages()
-        
-        addMockPeople(PeopleController.sharedController.defaultPersons)
-        addMockOthers(OtherController.sharedController.defaultOthers)
+//        OtherController.sharedController.setUpDefaultImages()
+//        PeopleController.sharedController.setUpDefaultImages()
+//        
+//        addMockPeople(PeopleController.sharedController.defaultPersons)
+//        addMockOthers(OtherController.sharedController.defaultOthers)
       
     }
     
+    func setUp(){
+        peopleArrayCount = PeopleController.sharedController.persons.count
+        otherArrayCount = OtherController.sharedController.others.count
+    }
  
     @IBAction func buttonTapped(sender: UIButton) {
     
         print("random button tapped")
         
-        let randomPair = RandomizerController().randomPair(peopleArrayCount, array2Count: otherArrayCount)
+        var randomPair = RandomizerController().randomPair(peopleArrayCount!, array2Count: otherArrayCount!)
         
         print("The random pair match is")
         print(randomPair.indexInArray1)

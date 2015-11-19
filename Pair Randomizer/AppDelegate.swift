@@ -17,7 +17,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let fetchRequestDefaultPeople = NSFetchRequest(entityName: "People")
+        do {
+            let results = try Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequestDefaultPeople)
+            if results.count == 0 {
+                
+                loadDefaultPeopleData()
+            }
+        } catch {
+            fatalError("Error fetching data")
+        }
+        
+        let fetchRequestDefaultOther = NSFetchRequest(entityName: "Other")
+        do {
+            let results = try Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequestDefaultOther)
+            if results.count == 0 {
+                
+                loadDefaultOtherData()
+            }
+        } catch {
+            fatalError("Error fetching data")
+        }
+        
         return true
+    }
+    
+    func loadDefaultPeopleData(){
+        
+        PeopleController.sharedController.setUpDefaultImages()
+        
+        guard let _ = NSEntityDescription.entityForName("People", inManagedObjectContext: Stack.sharedStack.managedObjectContext) else { fatalError("Could not find people entity description!")}
+        
+        let array = PeopleController.sharedController.defaultPersons
+        
+            for people in array{
+            
+            PeopleController.sharedController.addPerson(people)
+            
+            }
+    }
+    
+    func loadDefaultOtherData(){
+        
+        OtherController.sharedController.setUpDefaultImages()
+        
+        guard let _ = NSEntityDescription.entityForName("Other", inManagedObjectContext: Stack.sharedStack.managedObjectContext) else { fatalError("Could not find Other entity description!")}
+        
+        let array = OtherController.sharedController.defaultOthers
+        
+            for other in array{
+            
+                OtherController.sharedController.addOther(other)
+    
+            }
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
