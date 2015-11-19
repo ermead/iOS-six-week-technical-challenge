@@ -77,7 +77,7 @@
                                     <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cPx-wT-UOr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="rWc-ff-l6j">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default2" translatesAutoresizingMaskIntoConstraints="NO" id="rWc-ff-l6j">
                                 <rect key="frame" x="180" y="72" width="218" height="85"/>
                             </imageView>
                         </subviews>
@@ -130,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hBI-Vn-XEl">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="187" width="600" height="364"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="otherCell" textLabel="uqU-cC-0b1" detailTextLabel="qkW-Fh-2sJ" imageView="PfJ-Jp-vhp" style="IBUITableViewCellStyleSubtitle" id="3hC-JA-Yqm">
@@ -167,13 +167,48 @@
                                     <outlet property="delegate" destination="o5V-S4-G65" id="j15-Tu-02B"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kw-eW-EOW">
+                                <rect key="frame" x="493" y="149" width="87" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FiY-kW-etM"/>
+                                    <constraint firstAttribute="width" constant="87" id="giz-g4-Qjl"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="o5V-S4-G65" eventType="touchUpInside" id="VAq-Yw-nVi"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="grW-gZ-N7e">
+                                <rect key="frame" x="169" y="72" width="224" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="j7Y-pY-2u1"/>
+                                    <constraint firstAttribute="height" constant="107" id="mdN-Uf-osa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fiu-kW-hir">
+                                <rect key="frame" x="493" y="72" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hBI-Vn-XEl" firstAttribute="top" secondItem="4qN-qH-OqU" secondAttribute="bottom" id="AIY-YU-rGD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fiu-kW-hir" secondAttribute="trailing" id="8X8-2v-LYv"/>
                             <constraint firstAttribute="trailing" secondItem="hBI-Vn-XEl" secondAttribute="trailing" id="JI4-er-ATj"/>
+                            <constraint firstItem="hBI-Vn-XEl" firstAttribute="top" secondItem="1kw-eW-EOW" secondAttribute="bottom" constant="8" id="Jcb-y9-Lhe"/>
+                            <constraint firstItem="hBI-Vn-XEl" firstAttribute="top" secondItem="grW-gZ-N7e" secondAttribute="bottom" constant="8" id="NVL-Lc-UnM"/>
+                            <constraint firstItem="grW-gZ-N7e" firstAttribute="top" secondItem="4qN-qH-OqU" secondAttribute="bottom" constant="8" id="Qyi-lc-aNi"/>
+                            <constraint firstItem="grW-gZ-N7e" firstAttribute="centerX" secondItem="ux4-cG-M2M" secondAttribute="centerX" id="VBR-gQ-eI8"/>
+                            <constraint firstItem="Fiu-kW-hir" firstAttribute="top" secondItem="4qN-qH-OqU" secondAttribute="bottom" constant="8" id="cBX-cH-LMj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1kw-eW-EOW" secondAttribute="trailing" id="h2W-7t-uGc"/>
+                            <constraint firstItem="1kw-eW-EOW" firstAttribute="top" secondItem="Fiu-kW-hir" secondAttribute="bottom" constant="56" id="hvM-mZ-UtK"/>
                             <constraint firstItem="hBI-Vn-XEl" firstAttribute="leading" secondItem="ux4-cG-M2M" secondAttribute="leading" id="pjT-4D-uqZ"/>
                             <constraint firstItem="bzq-bW-uBB" firstAttribute="top" secondItem="hBI-Vn-XEl" secondAttribute="bottom" id="wVI-Vo-Hio"/>
+                            <constraint firstItem="hBI-Vn-XEl" firstAttribute="top" secondItem="4qN-qH-OqU" secondAttribute="bottom" constant="123" id="z1N-ZV-INF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h85-Fd-bNz">
@@ -183,6 +218,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imagePlaceholder" destination="grW-gZ-N7e" id="Q29-S2-4KM"/>
+                        <outlet property="namePlaceholder" destination="Fiu-kW-hir" id="0Ki-iM-8MM"/>
+                        <outlet property="saveButton" destination="1kw-eW-EOW" id="yEK-jQ-pF7"/>
+                        <outlet property="tableview" destination="hBI-Vn-XEl" id="wL9-Li-Xqh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipE-mP-vi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

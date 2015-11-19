@@ -27,8 +27,8 @@ class HomeScreenViewController: UIViewController {
         
         //deleteCoreData()
         
-        //addMockPeople(PeopleController.sharedController.defaultPersons)
-        //addMockOthers(OtherController.sharedController.defaultOthers)
+        addMockPeople(PeopleController.sharedController.defaultPersons)
+        addMockOthers(OtherController.sharedController.defaultOthers)
       
     }
     

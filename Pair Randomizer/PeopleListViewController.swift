@@ -16,9 +16,7 @@ class PeopleListViewController: UIViewController, UITableViewDataSource, UITable
     var placeholderImageId: String = " "
    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var imagePlaceholder: UIImageView!
-
     @IBOutlet weak var namePlaceholder: UILabel!
     
     @IBAction func addButtonTapped(sender: UIBarButtonItem) {

@@ -41,7 +41,7 @@ class OtherController: NSObject {
         saveToPersistentStorage()
     }
     
-    func removePerson(other: Other) {
+    func removeOther(other: Other) {
         other.managedObjectContext?.deleteObject(other)
         saveToPersistentStorage()
     }
