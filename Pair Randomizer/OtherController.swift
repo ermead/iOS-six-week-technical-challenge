@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 class OtherController: NSObject {
@@ -15,9 +16,20 @@ class OtherController: NSObject {
     
     static let sharedController = OtherController()
     
+    var imageId1: String = "12345"
+    var imageId2: String = "12345"
+    var imageId3: String = "12345"
+    var imageId4: String = "12345"
+    var imageId5: String = "12345"
+    
+    ImageController.getImageIdFromPhoto(UIImage(named: "blackCar")!) { (imageId) -> Void in
+        self.imageId1 = imageId
+    }
+    
+    
     var defaultOthers: [Other] {
         
-        let other1 = Other(name: "Truck", imageId: "12345", context: Stack.sharedStack.managedObjectContext)
+        let other1 = Other(name: "Truck", imageId: imageId1  context: Stack.sharedStack.managedObjectContext)
         let other2 = Other(name: "Ferrari", imageId: "12345", context: Stack.sharedStack.managedObjectContext)
         let other3 = Other(name: "Minivan", imageId: "12345", context: Stack.sharedStack.managedObjectContext)
         
