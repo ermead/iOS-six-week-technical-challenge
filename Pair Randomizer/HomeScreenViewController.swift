@@ -48,8 +48,6 @@ class HomeScreenViewController: UIViewController {
         print("\(OtherController.sharedController.others[randomPair.indexInArray2].name)")
         print("match up")
         
-        
-        
         //RandomizerController().randomForIndividual(25)
     
     }
@@ -91,6 +89,9 @@ class HomeScreenViewController: UIViewController {
             }
         }
     }
+    
+
+        
     
     
     override func didReceiveMemoryWarning() {

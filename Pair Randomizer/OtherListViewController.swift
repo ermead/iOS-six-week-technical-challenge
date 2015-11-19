@@ -8,8 +8,14 @@
 
 import UIKit
 
-class OtherListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class OtherListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
+    @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+        
+        print("add a new other entry")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +44,47 @@ class OtherListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
     }
+    
+//    @IBAction func addPhotoButtonTapped(sender: UIButton){
+//        
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.delegate = self
+//        
+//        let photoChoiceAlert = UIAlertController(title: "Select Photo Location", message: nil, preferredStyle: .ActionSheet)
+//        
+//        if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+//            photoChoiceAlert.addAction(UIAlertAction(title: "Photo Library", style: .Default, handler: { (_) -> Void in
+//                imagePicker.sourceType = .PhotoLibrary
+//                
+//                self.presentViewController(imagePicker, animated: true, completion: nil)
+//            }))
+//        }
+//        
+//        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+//            
+//            photoChoiceAlert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (_) -> Void in
+//                imagePicker.sourceType = .Camera
+//                
+//                self.presentViewController(imagePicker, animated: true, completion: nil)
+//            }))
+//            
+//        }
+//        
+//        photoChoiceAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+//        
+//        self.presentViewController(photoChoiceAlert, animated: true, completion: nil)
+//        
+//        
+//    }
+//    
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        
+//        picker.dismissViewControllerAnimated(true, completion: nil)
+//        
+//         = info[UIImagePickerControllerOriginalImage] as? UIImage
+//        
+//    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
