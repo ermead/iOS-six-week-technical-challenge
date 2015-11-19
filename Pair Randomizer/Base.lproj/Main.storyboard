@@ -311,8 +311,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uzt-Iv-Fyr">
-                                <rect key="frame" x="133" y="164" width="334" height="175"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uzt-Iv-Fyr">
+                                <rect key="frame" x="20" y="164" width="549" height="248"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="549" id="Noc-5F-Rl1"/>
+                                    <constraint firstAttribute="height" constant="248" id="ONR-IJ-tZg"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Your Car?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-47-JT3">
                                 <rect key="frame" x="63" y="72" width="475" height="71"/>
@@ -349,6 +353,7 @@
                             <constraint firstItem="MWh-47-JT3" firstAttribute="leading" secondItem="ugF-0Z-YJE" secondAttribute="leadingMargin" constant="43" id="8Zy-pL-smG"/>
                             <constraint firstItem="yto-ze-M1j" firstAttribute="centerX" secondItem="ugF-0Z-YJE" secondAttribute="centerX" id="A5R-fT-fAf"/>
                             <constraint firstItem="bmL-mZ-E7P" firstAttribute="top" secondItem="fwc-Yc-nDa" secondAttribute="bottom" constant="10" id="Bmd-sb-yBQ"/>
+                            <constraint firstItem="uzt-Iv-Fyr" firstAttribute="top" secondItem="MWh-47-JT3" secondAttribute="bottom" constant="21" id="Fko-ds-Ocg"/>
                             <constraint firstItem="bmL-mZ-E7P" firstAttribute="centerX" secondItem="ugF-0Z-YJE" secondAttribute="centerX" id="G9s-2M-fAk"/>
                             <constraint firstItem="C4j-bo-W7O" firstAttribute="top" secondItem="MWh-47-JT3" secondAttribute="bottom" constant="21" id="GV9-5k-Gzv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ceS-cq-O8p" secondAttribute="trailing" id="MWg-ON-xrm"/>
@@ -373,6 +378,7 @@
                             <mask key="constraints">
                                 <exclude reference="40f-kW-g1E"/>
                                 <exclude reference="t4m-Id-uOK"/>
+                                <exclude reference="0zT-jr-oNc"/>
                             </mask>
                         </variation>
                     </view>

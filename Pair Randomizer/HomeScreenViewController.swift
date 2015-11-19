@@ -95,7 +95,7 @@ class HomeScreenViewController: UIViewController {
         synthesizer.speakUtterance(utterance1)
         synthesizer.speakUtterance(utterance2)
         
-        
+        setUp()
         
         //RandomizerController().randomForIndividual(25)
     
